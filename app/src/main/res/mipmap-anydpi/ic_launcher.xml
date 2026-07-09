@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Legacy (API 24-25) launcher icon: solid brand-yellow background with the
+     football emblem foreground. API 26+ uses the adaptive icon in mipmap-anydpi-v26. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/ic_launcher_background" />
+    <item android:drawable="@mipmap/ic_launcher_foreground" />
+</layer-list>

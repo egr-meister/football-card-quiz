@@ -1,0 +1,20 @@
+# Local configuration & secrets
+local.properties
+*.p12
+*.keystore
+*.jks
+keystore.properties
+
+# Gradle / build
+.gradle/
+build/
+app/build/
+captures/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.DS_Store
+
+# Signing decoded in CI
+release-keystore.p12

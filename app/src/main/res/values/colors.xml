@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="strong_yellow">#FFC72C</color>
+    <color name="deep_yellow">#F2B900</color>
+    <color name="soft_yellow_panel">#FFF4CC</color>
+    <color name="pure_black">#FF000000</color>
+    <color name="deep_charcoal">#FF111111</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="referee_red">#EF4444</color>
+    <color name="ic_launcher_background">#FFC72C</color>
+</resources>
