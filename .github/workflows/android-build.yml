@@ -61,7 +61,13 @@ jobs:
             echo "::error::ANDROID_KEYSTORE_BASE64 secret is missing. A real PKCS12 keystore is required for signed release builds."
             exit 1
           fi
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$GITHUB_WORKSPACE/release-keystore.p12"
+          # Strip any whitespace/newlines that may have slipped in when the
+          # secret was pasted, then decode. This makes decoding robust.
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | tr -d '[:space:]' | base64 --decode > "$GITHUB_WORKSPACE/release-keystore.p12"
+          if [ ! -s "$GITHUB_WORKSPACE/release-keystore.p12" ]; then
+            echo "::error::Decoded keystore is empty. Check the ANDROID_KEYSTORE_BASE64 secret value."
+            exit 1
+          fi
           echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/release-keystore.p12" >> "$GITHUB_ENV"
 
       - name: Build signed release APK
